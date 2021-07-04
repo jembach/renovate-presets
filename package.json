@@ -1,0 +1,23 @@
+{
+  "name": "renovate-presets",
+  "version": "1.0.0",
+  "description": "contains presets for my personal projects",
+  "main": "index.js",
+  "repository": "git@github.com:jembach/renovate-presets.git",
+  "author": "Jonas Embach <j.embach@bit-production.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "validate": "yarn validate:web & yarn validate:app & yarn validate:backend",
+    "validate:web": "renovate-config-validator web.json",
+    "validate:app": "renovate-config-validator app.json",
+    "validate:backend": "renovate-config-validator backend.json"
+  },
+  "dependencies": {
+    "renovate": "^25.52.1",
+    "semantic-release": "^17.4.4"
+  }
+}

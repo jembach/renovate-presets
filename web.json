@@ -1,0 +1,29 @@
+{
+  "baseBranches": ["next"],
+  "timezone": "Europe/Berlin",
+  "labels": ["dependencies"],
+  "dependencyDashboard": true,
+  "presets": [
+    "monorepo:typescript-eslint",
+    "monorepo:semantic-release",
+    "monorepo:jest",
+    "monorepo:lodash",
+    "monorepo:nextjs",
+    "monorepo:react",
+    "monorepo:sentry",
+    "packages:apollographql",
+    "packages:eslint",
+    "packages:postcss",
+    "packages:jsUnitTest",
+    "schedule:earlyMondays",
+    ":prHourlyLimitNone"
+  ],
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "addLabels": ["automerge"]
+    }
+  ]
+}
