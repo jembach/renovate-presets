@@ -23,7 +23,16 @@
       "depTypeList": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
+      "requiredStatusChecks": null,
       "addLabels": ["automerge"]
+    },
+    {
+      "extends": "monorepo:sentry",
+      "groupName": "sentry",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "requiredStatusChecks": null,
+      "addLabels": ["automerge", "sentry"]
     }
   ]
 }
