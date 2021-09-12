@@ -16,6 +16,13 @@
     "schedule:earlyMondays",
     ":prHourlyLimitNone"
   ],
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": ["^npx expo install .+$"],
+  "postUpgradeTasks": {
+    "commands": ["npx expo install {{{depName}}}@^{{{currentVersion}}}"],
+    "fileFilters": ["package.json", "yarn.lock"],
+    "executionMode": "update"
+  },
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],
