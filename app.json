@@ -19,7 +19,10 @@
   "allowPostUpgradeCommandTemplating": true,
   "allowedPostUpgradeCommands": ["^npx expo install .+$"],
   "postUpgradeTasks": {
-    "commands": ["npx expo install {{{depName}}}@^{{{currentVersion}}}"],
+    "commands": [
+      "npx expo install {{{depName}}}@^{{{currentVersion}}}",
+      "npx yarn-deduplicate --strategy fewer"
+    ],
     "fileFilters": ["package.json", "yarn.lock"],
     "executionMode": "update"
   },

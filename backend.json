@@ -14,6 +14,13 @@
     "schedule:earlyMondays",
     ":prHourlyLimitNone"
   ],
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": ["^npx yarn-deduplicate --strategy fewer$"],
+  "postUpgradeTasks": {
+    "commands": ["npx yarn-deduplicate --strategy fewer"],
+    "fileFilters": ["package.json", "yarn.lock"],
+    "executionMode": "update"
+  },
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],
