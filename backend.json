@@ -10,17 +10,9 @@
     "monorepo:lodash",
     "packages:apollographql",
     "packages:eslint",
-    "packages:jsUnitTest",
-    "schedule:earlyMondays",
-    ":prHourlyLimitNone"
+    "packages:jsUnitTest"
   ],
-  "allowPostUpgradeCommandTemplating": true,
-  "allowedPostUpgradeCommands": ["^npx yarn-deduplicate --strategy fewer$"],
-  "postUpgradeTasks": {
-    "commands": ["npx yarn-deduplicate --strategy fewer"],
-    "fileFilters": ["package.json", "yarn.lock"],
-    "executionMode": "update"
-  },
+  "postUpdateOptions": ["yarnDedupeFewer"],
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],
