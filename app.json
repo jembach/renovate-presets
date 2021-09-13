@@ -15,6 +15,13 @@
     "packages:jsUnitTest"
   ],
   "postUpdateOptions": ["yarnDedupeFewer"],
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": ["^npx expo-cli install .+$"],
+  "postUpgradeTasks": {
+    "commands": ["npx expo-cli install {{{depName}}}@^{{{currentVersion}}}"],
+    "fileFilters": ["package.json", "yarn.lock"],
+    "executionMode": "update"
+  },
   "packageRules": [
     {
       "depTypeList": ["devDependencies"],
